@@ -5,6 +5,7 @@ var request = require("request");
 
 http.createServer(function(req, res) {
   var options = url.parse(req.url, true);
+  var path = "http://" + options.query.fpath;
   request(options.query.fpath).pipe(res);
 }).listen(process.env.PORT || 3080);
 
